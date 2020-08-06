@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- oracle JDBC 드라이버 위치 설정 -->
+	<classPathEntry
+		location="/Users/won-yungyeong/.m2/repository/com/oracle/ojdbc6/11.2.0.3/ojdbc6-11.2.0.3.jar.lastUpdated" />
+
+	<context id="context1">
+		<jdbcConnection
+			connectionURL="jdbc:oracle:thin:@localhost:1521:xe"
+			driverClass="oracle.jdbc.OracleDriver" password="test" userId="test" />
+		<javaModelGenerator
+			targetPackage="com.spring.mybatis.model" targetProject="ex" />
+		<javaClientGenerator
+			targetPackage="com.spring.mybatis.model" targetProject="ex"
+			type="XMLMAPPER" />
+		<sqlMapGenerator
+			targetPackage="com.spring.mybatis.model" targetProject="ex" />
+		<table schema="test" tableName="mybatis_member">
+			<!-- <columnOverride column="???" property="???" /> -->
+		</table>
+	</context>
+</generatorConfiguration>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+ "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="simple" targetRuntime="MyBatis3simple">
+		<jdbcConnection
+			connectionURL="jdbc:oracle:thin:@localhost:1521:xe"
+			driverClass="oracle.jdbc.OracleDriver" password="test" userId="test" />
+
+		<javaModelGenerator
+			targetPackage="com.project.domain"
+			targetProject="board/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator 
+			targetPackage="mybatis.mapper"
+			targetProject="board/src/main/resources" />
+
+		<javaClientGenerator
+			targetPackage="example.mapper" 
+			targetProject="board/src/main/java"
+			type="XMLMAPPER" />
+
+		<table tableName="usertb" />
+		<table tableName="member" />
+	</context>
+</generatorConfiguration>
